@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Portfolio</title>
+    <style>
+      :root {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --muted: #9aa4b2;
+        --accent: #06b6d4;
+        --glass: rgba(255, 255, 255, 0.03);
+        --radius: 12px;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #071027 0%, #071726 60%);
+        color: #e6eef6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.45;
+        padding: 32px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #021826;
+        box-shadow: 0 6px 18px rgba(6, 182, 212, 0.12);
+        flex: 0 0 64px;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-left: 14px;
+        font-size: 14px;
+      }
+      nav a:hover {
+        color: #fff;
+      }
+      .hero {
+        background: var(--glass);
+        padding: 22px;
+        border-radius: var(--radius);
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 20px;
+        backdrop-filter: blur(6px);
+      }
+      .hero-left {
+        flex: 1;
+      }
+      h1 {
+        margin: 0;
+        font-size: 22px;
+      }
+      p.lead {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+      .cta {
+        margin-top: 14px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #012;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 8px 20px rgba(6, 182, 212, 0.12);
+      }
+      /* layout */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+      }
+      .card {
+        background: var(--card);
+        padding: 16px;
+        border-radius: 12px;
+      }
+      .col-8 {
+        grid-column: span 8;
+      }
+      .col-4 {
+        grid-column: span 4;
+      }
+      /* projects */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .proj {
+        padding: 12px;
+        border-radius: 10px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+      }
+      .badges {
+        margin-top: 10px;
+      }
+      .badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 6px 8px;
+        border-radius: 8px;
+        margin-right: 6px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      /* skills */
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 8px 10px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      /* contact */
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        background: transparent;
+        color: inherit;
+      }
+      .contact textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      footer {
+        text-align: center;
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      @media (max-width: 800px) {
+        .grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .col-8,
+        .col-4 {
+          grid-column: auto;
+        }
+        .projects {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="avatar">YN</div>
+          <div>
+            <div style="font-weight: 700">Your Name</div>
+            <div style="color: var(--muted); font-size: 13px">
+              Frontend developer • UI/UX enthusiast
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Hi — I'm Your Name</h1>
+          <p class="lead">
+            I build accessible, responsive web interfaces and simple web apps. I
+            focus on clean design, performance and maintainable code.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#projects">See projects</a>
+          </div>
+        </div>
+        <div style="width: 150px; text-align: center">
+          <svg
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="0" y="0" width="120" height="120" rx="18" fill="url(#g)" />
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#06b6d4" />
+                <stop offset="1" stop-color="#7c3aed" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </section>
+
+      <main class="grid">
+        <div class="col-8">
+          <section id="about" class="card" style="margin-bottom: 18px">
+            <h3 style="margin-top: 0">About</h3>
+            <p class="lead" style="margin: 8px 0 0; color: var(--muted)">
+              I create interactive web experiences using HTML, CSS and
+              JavaScript. I enjoy transforming ideas into production-ready
+              interfaces and collaborating across teams to ship value quickly.
+            </p>
+          </section>
+
+          <section id="projects" class="card">
+            <h3 style="margin-top: 0">Projects</h3>
+            <div class="projects" style="margin-top: 12px">
+              <article class="proj">
+                <strong>Project Alpha</strong>
+                <p style="margin: 8px 0; color: var(--muted); font-size: 14px">
+                  A responsive dashboard built with vanilla JS and CSS grid for
+                  visualizing data.
+                </p>
+                <div class="badges">
+                  <span class="badge">HTML</span><span class="badge">CSS</span
+                  ><span class="badge">JS</span>
+                </div>
+                <div style="margin-top: 10px">
+                  <a
+                    class="btn"
+                    href="#"
+                    style="padding: 8px 10px; font-size: 13px"
+                    >View</a
+                  >
+                </div>
+              </article>
+
+              <article class="proj">
+                <strong>Portfolio Site</strong>
+                <p style="margin: 8px 0; color: var(--muted); font-size: 14px">
+                  This portfolio template — lightweight, accessible and easy to
+                  customize.
+                </p>
+                <div class="badges">
+                  <span class="badge">HTML</span><span class="badge">CSS</span>
+                </div>
+                <div style="margin-top: 10px">
+                  <a
+                    class="btn"
+                    href="#"
+                    style="padding: 8px 10px; font-size: 13px"
+                    >View</a
+                  >
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="col-4">
+          <div class="card" id="skills" style="margin-bottom: 18px">
+            <h4 style="margin-top: 0">Skills</h4>
+            <div class="skills" style="margin-top: 10px">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">React</span>
+              <span class="skill">TypeScript</span>
+              <span class="skill">Accessibility</span>
+            </div>
+          </div>
+
+          <div class="card contact" id="contact">
+            <h4 style="margin-top: 0">Contact</h4>
+            <form
+              action="mailto:your@email.com"
+              method="post"
+              enctype="text/plain"
+              style="margin-top: 10px"
+            >
+              <label style="font-size: 13px; color: var(--muted)">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+              <label
+                style="
+                  font-size: 13px;
+                  color: var(--muted);
+                  margin-top: 8px;
+                  display: block;
+                "
+                >Message</label
+              >
+              <textarea name="message" placeholder="Brief message"></textarea>
+              <div style="margin-top: 10px">
+                <button
+                  class="btn"
+                  type="submit"
+                  style="border: none; background: var(--accent); color: #012"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+
+            <div style="margin-top: 12px; color: var(--muted); font-size: 13px">
+              Or email:
+              <a
+                href="mailto:your@email.com"
+                style="color: var(--accent); text-decoration: none"
+                >your@email.com</a
+              >
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        © <span id="year"></span> Your Name — Built with simple HTML & CSS
+      </footer>
+    </div>
+
+    <script>
+      // small runtime polish
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
